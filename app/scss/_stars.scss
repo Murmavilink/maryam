@@ -1,0 +1,115 @@
+.stars-wrapper{
+display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+
+
+}
+.stars {
+  background: #F5F5F5;
+  padding: 4rem 0;
+  border-radius: 30px;
+
+  &__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @media (min-width: 320px) and (max-width: 1023px) {
+      grid-template-columns: 1fr;
+      align-items: center;
+      justify-content: center;
+      grid-gap: 30px;
+    }
+
+    &-title {
+      font-family: 'Lora';
+      font-weight: 500;
+      font-size: 48px;
+      line-height: 110%;
+    }
+
+    &-text {
+      max-width: 640px;
+
+      span {
+        color: $pink;
+      }
+    }
+  }
+}
+
+.swiper-stars {
+  height: 100%;
+  max-height: 850px;
+  padding: 2rem 0 0;
+  position: relative;
+  .swiper-slide {
+    @media (min-width: 1024px) {
+      width: fit-content !important;
+      max-width: 380px !important;
+    }
+    @media(min-width: 320px) and (max-width: 1023px) {
+      width: inherit;
+      max-width: inherit;
+    }
+  }
+
+  .swiper-wrapper {
+    padding-bottom: 50px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #F9278B;
+  }
+
+  .stars-box {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 0.5rem;
+      line-height: 27px;
+      color: #323232;
+    }
+
+    &__text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 120%;
+      color: #323232;
+    }
+  }
+
+  .stars-block {
+    margin-bottom: 1rem;
+ position: relative;
+    z-index: 1;
+    &__img {
+      width: 100%;
+
+    }
+	  &__bg{
+        content: '';
+        width: 100%;
+        top: 0;
+        height: 100%;
+        background: #F96DB1;
+        border-radius: 10px;
+        transition:  0.3s ease-in-out all;
+        transform: rotate(0);
+       position: absolute;
+        z-index: -1;
+	  }
+  }
+ .stars-block:hover > .stars-block__bg{
+   transform: rotate(2.66deg);
+   transition:  0.3s ease-in-out all;
+ }
+}
